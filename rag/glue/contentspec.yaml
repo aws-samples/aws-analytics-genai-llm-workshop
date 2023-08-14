@@ -1,0 +1,57 @@
+version: 2.0
+
+# BEGIN Locale
+defaultLocaleCode: en-US
+localeCodes:
+  - en-US
+# END Locale
+
+
+params:
+  author: Houssam Hamad and Leonardo Gomez
+  description: ny summit dg workshop
+  disableAssetsBusting: true
+  disableBreadcrumb: false
+  disableInlineCopyToClipBoard: true
+  disableLanguageSwitchingButton: true
+  disableNextPrev: false
+  disableSearch: false
+  disableShortcutsTitle: true
+  themeVariant: aws
+
+
+
+# START Accounts
+awsAccountConfig:
+  accountSources:
+    - WorkshopStudio
+  participantRole:
+    iamPolicies:
+      - static/iam-policy.json
+    managedPolicies:
+      - "arn:aws:iam::aws:policy/AWSLakeFormationDataAdmin"
+  ec2KeyPair: true
+  regionConfiguration:
+    minAccessibleRegions: 1
+    maxAccessibleRegions: 3
+    accessibleRegions:
+      required:
+        - us-east-1
+      recommended:
+        - us-east-1
+      optional:
+        - us-east-1
+    deployableRegions:
+      required:
+        - us-east-1
+
+# END Accounts
+
+
+# START Infrastructure
+infrastructure:
+  cloudformationTemplates:
+    - templateLocation: static/dgworkshop.yaml
+      label: New-York Summit Data Governance
+
+# END Infrastructure
