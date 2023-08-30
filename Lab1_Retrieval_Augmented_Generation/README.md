@@ -11,11 +11,3 @@ Below are some benefits of using RAG:
 * Mitigation of hallucination: RAG can help to mitigate the problem of "hallucination" in language models, where the model generates text that is not based on any real knowledge.
 * Fine-tuning and updating: RAG models can be fine-tuned and updated with new knowledge, which makes them more adaptable to new tasks and domains
 
-# TODO: Repo Module Overview
-
-## [API](./api/)
-
-## [GLUE](./glue/)
-
-## [STREAMLIT](./streamlit-app/)
-
