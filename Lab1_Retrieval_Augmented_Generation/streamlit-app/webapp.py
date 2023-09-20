@@ -36,9 +36,9 @@ EMBEDDINGS_MODEL_LIST: List[str] = ["all-MiniLM-L6-v2"]
 # if running this app on a compute environment that has
 # IAM cloudformation::DescribeStacks access read the 
 # stack outputs to get the name of the LLM endpoint
-CFN_ACCESS = False
+CFN_ACCESS = True
 if CFN_ACCESS is True:
-    CFN_STACK_NAME: str = "llm-apps-blog-rag"
+    CFN_STACK_NAME: str = "genai-workshop"
     outputs = get_cfn_outputs(CFN_STACK_NAME)
 else:
     # create an outputs dictionary with keys of interest
