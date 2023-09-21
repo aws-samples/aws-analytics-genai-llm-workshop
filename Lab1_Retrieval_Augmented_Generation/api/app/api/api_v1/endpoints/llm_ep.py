@@ -107,7 +107,7 @@ async def rag_handler(req: Request) -> Dict[str, Any]:
 
     # now that we have the matching docs, lets pack them as a context
     # into the prompt and ask the LLM to generate a response
-    prompt_template = """Answer the question as truthfully as possible using the provided text, and if the answer is not contained within the text below, say "I don't know the answer to this!:\n\n{context}\n\n{question}"""
+    prompt_template = """Answer the question using the provided text and provide a descriptive summary, if the answer is not contained within the text below, say "I don't know the answer to this!:\n\n{context}\n\n{question}"""
 
     prompt = PromptTemplate(
         template=prompt_template, input_variables=["context", "question"]
